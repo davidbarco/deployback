@@ -37,7 +37,14 @@ const controller = {
       
       //guardar en base de datos.
       pool.query(
-        `INSERT INTO movies VALUES ('','${movie.name.toUpperCase()}','${movie.año}','${movie.id_categoria}','${movie.descripcion}','${movie.image}','${movie.video}')`,
+        `INSERT INTO movies (
+          name,
+          año,
+          id_categoria,
+          descripcion,
+          image,
+          video
+          ) VALUES ('${movie.name.toUpperCase()}','${movie.año}','${movie.id_categoria}','${movie.descripcion}','${movie.image}','${movie.video}')`,
         (err, result) => {
           if (err) {
             console.log(err);
