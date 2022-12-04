@@ -51,7 +51,7 @@ const controller = {
       user.email = email.toLowerCase();
       user.password = password;
       user.role = "admin";
-      user.image = null;
+      user.image = "null";
 
       //commprobar si el usuario existe.
       const usuarioExiste = await pool.query(
