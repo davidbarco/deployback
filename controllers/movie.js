@@ -147,7 +147,6 @@ const controller = {
       })
     }
 
-    console.log("archivo", req.files);
     //conseguir el nombre y la extension del archivo imagen.
     let file_path = req.files.image.path;
     let file_split = file_path.split('\\');
