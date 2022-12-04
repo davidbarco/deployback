@@ -137,7 +137,7 @@ const controller = {
     //recoger el fichero de la peticion.
     let file_name = 'Imagen no subida.';
     let file_video = 'Video no subido';
-    
+    console.log(req.files);
     //return console.log(req.files);
     if(!req.files){
       res.status(500).send({
@@ -149,7 +149,7 @@ const controller = {
 
     //conseguir el nombre y la extension del archivo imagen.
     let file_path = req.files.image.path;
-    console.log(file_path);
+   
     let file_split = file_path.split('\\');
 
     //conseguir el nombre y la extension del archivo video.
