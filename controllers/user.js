@@ -72,7 +72,7 @@ const controller = {
 
           //guardar en base de datos.
           pool.query(
-            `INSERT INTO users VALUES ('','${user.name}','${user.surname}','${user.email}','${user.password}','${user.role}','${user.image}')`,
+            `INSERT INTO users (name,surname,email,password,role,image) VALUES ('${user.name}','${user.surname}','${user.email}','${user.password}','${user.role}','${user.image}')`,
             (err, result) => {
               if (err) {
                 //devolver respuesta de error al guardar en base de datos.
