@@ -51,7 +51,7 @@ const controller = {
       user.email = email.toLowerCase();
       user.password = password;
       user.role = "admin";
-      user.image = "null";
+      user.image = null;
 
       //commprobar si el usuario existe.
       const usuarioExiste = await pool.query(
@@ -108,11 +108,9 @@ const controller = {
       const {email, password, getToken} = req.body;
 
       //validar los datos.
-      console.log(email,password);
       let validate_email = !validator.isEmpty(email) && validator.isEmail(email);
       let validate_password = !validator.isEmpty(password);
 
-      console.log(validate_email,validate_password);
       if (validate_email && validate_password){
       //buscar usuarios que coincidan con el email.
       const usuario = await pool.query(
