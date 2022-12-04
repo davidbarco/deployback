@@ -24,7 +24,7 @@ const controller = {
       
       //guardar en base de datos.
       pool.query(
-        `INSERT INTO categorias VALUES ('','${category.name}')`,
+        `INSERT INTO categorias (name) VALUES ('${category.name}')`,
         (err, result) => {
           if (err) {
             //devolver respuesta de error al guardar en base de datos.
