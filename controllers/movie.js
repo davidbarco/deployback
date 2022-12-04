@@ -132,6 +132,8 @@ const controller = {
   //metodo para subir imagen y video de la pelicula
   uploadImage: (req, res)=>{
 
+    console.log("hola",req.body);
+
     //configurar el modulo de connect multiparty.hecho en  /routes/user.js
 
     //recoger el fichero de la peticion.
