@@ -137,7 +137,7 @@ const controller = {
     //recoger el fichero de la peticion.
     let file_name = 'Imagen no subida.';
     let file_video = 'Video no subido';
-    console.log(req);
+    
     //return console.log(req.files);
     if(!req.files){
       res.status(500).send({
@@ -149,7 +149,6 @@ const controller = {
 
     //conseguir el nombre y la extension del archivo imagen.
     let file_path = req.files.image.path;
-   
     let file_split = file_path.split('\\');
 
     //conseguir el nombre y la extension del archivo video.
@@ -180,9 +179,7 @@ const controller = {
     if(file_ext != 'png' && file_ext != 'jpg' && file_ext != 'jpeg' && file_ext != 'gif' || file_ext_video != 'mp4'){
       
       fs.unlink(file_path, (err)=>{
-
         fs.unlink(file_path_video, (err)=>{
-          
             res.status(500).send({
               status: "error",
               message: "las extensiones de los archivos no son validas"

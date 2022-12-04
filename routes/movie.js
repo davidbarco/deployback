@@ -11,7 +11,7 @@ router.post('/createMovie',[md_auth.authenticated], MovieController.save);
 
 //a esta ruta de actualizar solo se puede acceder si hay un usuario autenticado con token
 router.put('/updateMovie/:movieId', md_auth.authenticated, MovieController.update);
-router.post('/upload-image/:movieId', [md_auth.authenticated], MovieController.uploadImage);
+router.post('/upload-image/:movieId', [md_auth.authenticated, md_upload], MovieController.uploadImage);
 router.get('/image/:fileName', MovieController.image);
 router.get('/video/:fileName', MovieController.video);
 router.get('/movies', MovieController.getMovies);
